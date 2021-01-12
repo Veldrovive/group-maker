@@ -1,32 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <v-app>
+    <div class='app'>
+      <router-view/>
+      <!-- <div class='card-container'>
+        <draggable-card></draggable-card>
+      </div> -->
     </div>
-    <router-view/>
-  </div>
+  </v-app>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+// import DraggableCard from '@/components/DraggableCard'
+
+export default {
+  name: 'App',
+  components: {
+    // DraggableCard
+  }
 }
+</script>
 
-#nav {
-  padding: 30px;
+<style lang='scss'>
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  width: 100%;
+  height: 100%;
+  .card-container {
+    width: 40vw;
+    height: 40vh;
   }
 }
 </style>
